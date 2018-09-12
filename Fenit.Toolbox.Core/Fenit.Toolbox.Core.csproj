@@ -7,8 +7,8 @@
     <ProjectGuid>{D469322B-1A48-434D-BA78-49D668822EFE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fenit.Toolbox</RootNamespace>
-    <AssemblyName>Fenit.Toolbox</AssemblyName>
+    <RootNamespace>Fenit.Toolbox.Core</RootNamespace>
+    <AssemblyName>Fenit.Toolbox.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

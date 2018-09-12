@@ -99,9 +99,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Fenit.Core.Web\Fenit.Core.Web.csproj">
+    <ProjectReference Include="..\Fenit.Toolbox.Web\Fenit.Web.csproj">
       <Project>{6BD611DE-ED3C-4305-9E7F-46C3886B3C79}</Project>
-      <Name>Fenit.Core.Web</Name>
+      <Name>Fenit.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

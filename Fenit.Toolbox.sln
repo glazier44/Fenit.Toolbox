@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.UserManager",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.UserManager.Web", "Fenit.Toolbox.UserManager.Web\Fenit.Toolbox.UserManager.Web.csproj", "{1314C678-598A-41FC-8DCB-31EED75B8C6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Web", "Fenit.Toolbox.Web\Fenit.Web.csproj", "{6BD611DE-ED3C-4305-9E7F-46C3886B3C79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Web", "Fenit.Toolbox.Web\Fenit.Toolbox.Web.csproj", "{6BD611DE-ED3C-4305-9E7F-46C3886B3C79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

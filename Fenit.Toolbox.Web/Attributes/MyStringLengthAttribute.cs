@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Fenit.Core.Web.Attributes
+namespace Fenit.Toolbox.Web.Attributes
 {
     public class MyStringLengthAttribute : StringLengthAttribute
     {

@@ -54,10 +54,6 @@
       <Project>{44308536-6273-4B25-8A3D-C04F9C35776E}</Project>
       <Name>Fenit.Toolbox.UserManager</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Fenit.Toolbox.Web\Fenit.Web.csproj">
-      <Project>{6BD611DE-ED3C-4305-9E7F-46C3886B3C79}</Project>
-      <Name>Fenit.Web</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
+using System.Text;
 
 namespace Fenit.Toolbox.Core.Extension
 {
     public static class StringExtension
     {
+        #region DateTime
         public static string AsSmallString(this DateTime val, string format)
         {
             return val.ToString(format);
@@ -16,6 +17,7 @@ namespace Fenit.Toolbox.Core.Extension
         {
             return val.HasValue ? val.Value.AsSmallString(format) : string.Empty;
         }
+
         public static string AsSmallString(this DateTime val)
         {
             return val.ToString("yyyy-MM-dd");
@@ -25,6 +27,7 @@ namespace Fenit.Toolbox.Core.Extension
         {
             return val.HasValue ? val.Value.AsSmallString() : string.Empty;
         }
+
         public static string AsLongString(this DateTime val)
         {
             return val.ToString("yyyy-MM-dd HH:mm:ss");
@@ -34,6 +37,9 @@ namespace Fenit.Toolbox.Core.Extension
         {
             return val.HasValue ? val.Value.AsLongString() : string.Empty;
         }
+        #endregion
+
+        #region TimeSpan
 
         public static string AsStringHMS(this TimeSpan val)
         {
@@ -60,6 +66,31 @@ namespace Fenit.Toolbox.Core.Extension
             return val.HasValue ? val.Value.AsStringHMS() : "00:00:00";
         }
 
+        public static string SumLabel(this TimeSpan? time)
+        {
+            if (time == null) return String.Empty;
+            return time.Value.SumLabel();
+        }
+
+        public static string SumLabel(this TimeSpan time)
+        {
+            return $"{(int)time.TotalHours} godzin {time.Minutes} minut";
+        }
+
+        public static string SmallSumLabel(this TimeSpan? time)
+        {
+            if (time == null) return String.Empty;
+            return time.Value.SmallSumLabel();
+        }
+
+        public static string SmallSumLabel(this TimeSpan time)
+        {
+            if (time.Minutes > 9) return $"{(int)time.TotalHours}:{time.Minutes}";
+            return $"{(int)time.TotalHours}:0{time.Minutes}";
+        }
+
+        #endregion
+
         public static string AsString(this decimal val)
         {
             return val.ToString("##.##");
@@ -80,61 +111,33 @@ namespace Fenit.Toolbox.Core.Extension
             return val != null ? val.Value.AsString() : string.Empty;
         }
 
-        public static DateTime? AsNullDateTime(this string val)
+        public static string GetInnerMessage(this Exception e)
         {
-            return val.AsNullDateTime("yyyy-MM-dd");
-        }
-
-        public static TimeSpan AsTimeSpan(this string val)
-        {
-            var table = val.Split(':');
-            int h;
-            if (int.TryParse(table[0], out h))
+            var sb = new StringBuilder();
+            sb.Append("Message:\n");
+            sb.Append(e.Message);
+            sb.Append("\nStackTrace:\n");
+            sb.Append(e.StackTrace);
+            sb.Append("\nInfo:\n");
+            sb.Append(e);
+            var ie = e.InnerException;
+            if (ie != null)
             {
-                int m;
-                if (int.TryParse(table[1], out m))
-                {
-                    return new TimeSpan(h, m, 0);
-                }
+                sb.Append("\nInnerException:\n");
+                sb.Append(GetInnerMessage(ie));
             }
 
-            return new TimeSpan();
+            return sb.ToString();
         }
 
-
-        public static DateTime? AsNullDateTime(this string val, string format)
+        public static string ToJsString(this string value)
         {
-            DateTime intervalVal;
-            if (DateTime.TryParseExact(val,
-                format,
-                CultureInfo.InvariantCulture,
-                DateTimeStyles.None,
-                out intervalVal))
-            {
-                return intervalVal;
-            }
-            return null;
-        }
-
-
-        public static DateTime AsDateTime(this string val, string format)
-        {
-            var dt = val.AsNullDateTime(format);
-            if (dt != null)
-            {
-                return (DateTime)dt;
-            }
-            return DateTime.MinValue;
-        }
-
-        public static DateTime AsDateTime(this string val)
-        {
-            var dt = val.AsNullDateTime();
-            if (dt != null)
-            {
-                return (DateTime)dt;
-            }
-            return DateTime.MinValue;
+            var result = value.Replace(" ", "_");
+            result = result.Replace(" ", "_");
+            result = result.Replace(" ", "_");
+            result = result.Replace(".", "");
+            result = result.Replace(".", "");
+            return result;
         }
 
         public static decimal AsDecimal(this string val)

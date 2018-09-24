@@ -1,4 +1,4 @@
-﻿namespace Fenit.Core.Web
+﻿namespace Fenit.Toolbox.Core
 {
     public class VersionInfoHelper
     {

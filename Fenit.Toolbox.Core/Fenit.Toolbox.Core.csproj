@@ -43,18 +43,14 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converted\ConvertBool.cs" />
     <Compile Include="Enum\Order.cs" />
     <Compile Include="Extension\QueryableExtensions.cs" />
     <Compile Include="Extension\StringExtension.cs" />
+    <Compile Include="Extension\EnumExtension.cs" />
     <Compile Include="Extension\SystemExtension.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -3,13 +3,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using Fenit.Toolbox.ApplicationUserManager.Enum;
-using Fenit.Toolbox.ApplicationUserManager.Helper;
-using Fenit.Toolbox.ApplicationUserManager.Model;
-using Fenit.Toolbox.ApplicationUserManager.ViewModel;
 using Fenit.Toolbox.Core.Web;
+using Fenit.Toolbox.UserManager.Enum;
+using Fenit.Toolbox.UserManager.Helper;
+using Fenit.Toolbox.UserManager.Model;
+using Fenit.Toolbox.UserManager.ViewModel;
 
-namespace Fenit.Toolbox.ApplicationUserManager
+namespace Fenit.Toolbox.UserManager.Web
 {
     public class ApplicationUserManager<TEntity, TDbContext>
         where TEntity : class, IUser, new()

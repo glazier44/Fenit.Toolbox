@@ -1,4 +1,4 @@
-﻿namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
+﻿namespace Fenit.Toolbox.UserManager.ViewModel
 {
     public interface IUserViewModel
     {

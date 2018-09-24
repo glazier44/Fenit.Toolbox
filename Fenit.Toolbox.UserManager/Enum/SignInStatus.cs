@@ -1,4 +1,4 @@
-﻿namespace Fenit.Toolbox.ApplicationUserManager.Enum
+﻿namespace Fenit.Toolbox.UserManager.Enum
 {
     public enum SignInStatus
     {

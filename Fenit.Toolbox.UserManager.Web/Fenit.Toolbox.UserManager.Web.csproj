@@ -7,8 +7,8 @@
     <ProjectGuid>{1314C678-598A-41FC-8DCB-31EED75B8C6B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Fenit.Toolbox.ApplicationUserManager</RootNamespace>
-    <AssemblyName>Fenit.Toolbox.ApplicationUserManager</AssemblyName>
+    <RootNamespace>Fenit.Toolbox.UserManager.Web</RootNamespace>
+    <AssemblyName>Fenit.Toolbox.UserManager.Web</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

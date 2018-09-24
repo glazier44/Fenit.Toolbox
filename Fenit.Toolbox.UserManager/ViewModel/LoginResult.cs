@@ -1,7 +1,7 @@
-﻿using Fenit.Toolbox.ApplicationUserManager.Enum;
-using Fenit.Toolbox.Core.Web;
+﻿using Fenit.Toolbox.Core.Web;
+using Fenit.Toolbox.UserManager.Enum;
 
-namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
+namespace Fenit.Toolbox.UserManager.ViewModel
 {
     public class LoginResult : Response
     {

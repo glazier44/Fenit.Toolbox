@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 
-namespace Fenit.Toolbox.ApplicationUserManager.Enum
+namespace Fenit.Toolbox.UserManager.Enum
 {
     [Flags]
     public enum UserRole

@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Fenit.Toolbox.ApplicationUserManager.Attributes
+namespace Fenit.Toolbox.UserManager.Attributes
 {
     public class OnlyAnonimAttribute : ActionFilterAttribute
     {

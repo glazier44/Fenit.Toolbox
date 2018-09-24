@@ -1,8 +1,8 @@
-﻿using Fenit.Toolbox.ApplicationUserManager.Enum;
-using Fenit.Toolbox.ApplicationUserManager.Model;
+﻿using Fenit.Toolbox.UserManager.Enum;
+using Fenit.Toolbox.UserManager.Model;
 using Newtonsoft.Json;
 
-namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
+namespace Fenit.Toolbox.UserManager.ViewModel
 {
     public class UserData
     {

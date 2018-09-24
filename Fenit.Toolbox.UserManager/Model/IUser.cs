@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fenit.Toolbox.ApplicationUserManager.Model
+namespace Fenit.Toolbox.UserManager.Model
 {
     public interface IUser
     {

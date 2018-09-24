@@ -3,9 +3,9 @@ using System.Security.Cryptography;
 using System.Security.Principal;
 using System.Text;
 using System.Web.Security;
-using Fenit.Toolbox.ApplicationUserManager.ViewModel;
+using Fenit.Toolbox.UserManager.ViewModel;
 
-namespace Fenit.Toolbox.ApplicationUserManager.Helper
+namespace Fenit.Toolbox.UserManager.Helper
 {
     public static class SafeManager
     {

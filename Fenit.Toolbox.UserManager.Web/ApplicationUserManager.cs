@@ -7,11 +7,12 @@ using Fenit.Toolbox.ApplicationUserManager.Enum;
 using Fenit.Toolbox.ApplicationUserManager.Helper;
 using Fenit.Toolbox.ApplicationUserManager.Model;
 using Fenit.Toolbox.ApplicationUserManager.ViewModel;
+using Fenit.Toolbox.Core.Web;
 
 namespace Fenit.Toolbox.ApplicationUserManager
 {
     public class ApplicationUserManager<TEntity, TDbContext>
-        where TEntity : class, IUser, new() 
+        where TEntity : class, IUser, new()
         where TDbContext : DbContext, new()
     {
         protected Func<TDbContext> ContextFactory;
@@ -21,6 +22,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
             Func<TDbContext> factory = () => new TDbContext();
             ContextFactory = factory;
         }
+
         public bool CheckAccess(UserRole role)
         {
             var user = GetUserData();
@@ -35,8 +37,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
             {
                 try
                 {
-                    string salt, hash;
-                    SafeManager.HashString(userModel.Password, out hash, out salt);
+                    SafeManager.HashString(userModel.Password, out var hash, out var salt);
                     var user = context.Set<TEntity>().FirstOrDefault(w => w.Id == userModel.Id && !w.IsDeleted);
                     if (user != null)
                     {
@@ -49,7 +50,6 @@ namespace Fenit.Toolbox.ApplicationUserManager
                             }
                             else
                             {
-
                                 user.Password = hash;
                                 user.Salt = salt;
                                 user.PasswordFailureCount = 0;
@@ -86,8 +86,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
                 try
                 {
                     var newPassword = SafeManager.CreatePassword(10);
-                    string salt, hash;
-                    SafeManager.HashString(newPassword, out hash, out salt);
+                    SafeManager.HashString(newPassword, out var hash, out var salt);
                     var user = context.Set<TEntity>().FirstOrDefault(w => w.Id == userModel.Id && !w.IsDeleted);
                     if (user != null)
                     {
@@ -95,13 +94,11 @@ namespace Fenit.Toolbox.ApplicationUserManager
                         user.Salt = salt;
                         user.PasswordFailureCount = 0;
                         context.SaveChanges();
-                        result.AddSucces(string.Format("Hasło zostało zresetowane. Nowe to: {0}", newPassword));
-
+                        result.AddSucces($"Hasło zostało zresetowane. Nowe to: {newPassword}");
                     }
                     else
                     {
                         result.AddError("Brak użytkownika");
-
                     }
                 }
                 catch (Exception e)
@@ -130,8 +127,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
 
                         context.SaveChanges();
 
-                        result.AddSucces(string.Format("Uzytkownik {0} został skasowany", user.Login));
-
+                        result.AddSucces($"Uzytkownik {user.Login} został skasowany");
                     }
                     else
                     {
@@ -164,8 +160,8 @@ namespace Fenit.Toolbox.ApplicationUserManager
                         user.PasswordFailureCount = 0;
                         context.SaveChanges();
 
-                        result.AddSucces(string.Format("Uzytkownik {0} został {1}", user.Login,
-                            userModel.IsActive ? "odblokowany" : "zablokowany"));
+                        result.AddSucces(
+                            $"Uzytkownik {user.Login} został {(userModel.IsActive ? "odblokowany" : "zablokowany")}");
                     }
                     else
                     {
@@ -202,8 +198,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
                     var user = context.Set<TEntity>().FirstOrDefault(w => w.Id == userModel.Id && !w.IsDeleted);
                     if (user == null)
                     {
-                        string salt, hash;
-                        SafeManager.HashString(userModel.Password, out hash, out salt);
+                        SafeManager.HashString(userModel.Password, out var hash, out var salt);
 
                         user = new TEntity
                         {
@@ -219,8 +214,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
                             Salt = salt
                         };
                         context.Set<TEntity>().Add(user);
-                        result.AddSucces(string.Format("Użytkownik {0} został dodany.", userModel.Login));
-
+                        result.AddSucces($"Użytkownik {userModel.Login} został dodany.");
                     }
                     else
                     {
@@ -231,9 +225,9 @@ namespace Fenit.Toolbox.ApplicationUserManager
                         user.EditDate = DateTime.Now;
                         user.Email = userModel.Email;
                         user.Login = userModel.Login;
-                        result.AddSucces(string.Format("Użytkownik {0} został zedytowany.", userModel.Login));
-
+                        result.AddSucces($"Użytkownik {userModel.Login} został zedytowany.");
                     }
+
                     context.SaveChanges();
                 }
                 catch (Exception e)
@@ -259,6 +253,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
                     return userData;
                 }
             }
+
             return null;
         }
 
@@ -302,6 +297,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
 
                 context.SaveChanges();
             }
+
             return result;
         }
 
@@ -324,7 +320,7 @@ namespace Fenit.Toolbox.ApplicationUserManager
             var newTicket = new FormsAuthenticationTicket(
                 ticket.Version, ticket.Name, ticket.IssueDate, ticket.Expiration,
                 ticket.IsPersistent, userData.ToJson(), ticket.CookiePath
-                );
+            );
 
             var encTicket = FormsAuthentication.Encrypt(newTicket);
             cookie.Value = encTicket;

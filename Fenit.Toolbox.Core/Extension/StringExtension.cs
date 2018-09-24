@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 
-namespace Fenit.Core.Web.Extension
+namespace Fenit.Toolbox.Core.Extension
 {
     public static class StringExtension
     {

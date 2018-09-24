@@ -1,4 +1,5 @@
 ﻿using Fenit.Toolbox.ApplicationUserManager.Enum;
+using Fenit.Toolbox.Core.Web;
 
 namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
 {
@@ -8,7 +9,7 @@ namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
 
         public SignInStatus SignInStatus
         {
-            get { return _signInStatus; }
+            get => _signInStatus;
             set
             {
                 _signInStatus = value;

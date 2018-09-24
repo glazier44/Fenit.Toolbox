@@ -3,10 +3,10 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Fenit.Core.Web.Enum;
+using Fenit.Toolbox.Core.Enum;
 using LinqKit;
 
-namespace Fenit.Core.Web.Extension
+namespace Fenit.Toolbox.Core.Extension
 {
     public static class QueryableExtensions
     {

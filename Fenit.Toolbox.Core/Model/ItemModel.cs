@@ -1,4 +1,4 @@
-﻿namespace TBBudzet.Common.ViewModel.Base
+﻿namespace Fenit.Toolbox.Core.Model
 {
     public class ItemModel
     {

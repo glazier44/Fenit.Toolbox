@@ -9,7 +9,7 @@ namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
         public UserData(IUser user)
         {
             Id = user.Id;
-            UserName = string.Format("{0} {1}",user.Imie, user.Nazwisko);
+            UserName = $"{user.Imie} {user.Nazwisko}";
             UserRole = (UserRole) user.Rola;
             Login = user.Login;
             IsIsAuthenticated = true;
@@ -40,16 +40,10 @@ namespace Fenit.Toolbox.ApplicationUserManager.ViewModel
 
         public UserRole UserRole { get; set; }
 
-        public bool IsAdmin
-        {
-            get { return UserRole <= UserRole.Admin; }
-        }
+        public bool IsAdmin => UserRole <= UserRole.Admin;
 
 
-        public bool IsRoot
-        {
-            get { return UserRole <= UserRole.Root; }
-        }
+        public bool IsRoot => UserRole <= UserRole.Root;
 
         public string ToJson()
         {

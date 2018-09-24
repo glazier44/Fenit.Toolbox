@@ -1,5 +1,5 @@
 ﻿
-namespace Fenit.Core.Web.Converted
+namespace Fenit.Toolbox.Core.Converted
 {
     public static class ConvertBool
     {

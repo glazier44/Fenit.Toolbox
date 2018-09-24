@@ -7,16 +7,14 @@ using Fenit.Toolbox.ApplicationUserManager.ViewModel;
 
 namespace Fenit.Toolbox.ApplicationUserManager.Helper
 {
-    public static class Ex
+    public static class SafeManager
     {
+        private const string FixedSalt = "X2#a78asKD!9!FoJZ3$sdfld5dfd5294yboCJK(I#!(CIIJS";
+
         public static UserData GetUsetData(this IPrincipal principal)
         {
             var result = new UserData();
-            var identity = principal.Identity as FormsIdentity;
-            if (identity != null)
-            {
-                result = new UserData(identity.Ticket.UserData);
-            }
+            if (principal.Identity is FormsIdentity identity) result = new UserData(identity.Ticket.UserData);
             return result;
         }
 
@@ -24,21 +22,13 @@ namespace Fenit.Toolbox.ApplicationUserManager.Helper
         {
             return principal.GetUsetData().Id;
         }
-    }
-
-    public static class SafeManager
-    {
-        private const string FixedSalt = "X2#a78asKD!9!FoJZ3$sdfld5dfd5294yboCJK(I#!(CIIJS";
 
         public static string CreatePassword(int length)
         {
             const string valid = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
-            StringBuilder res = new StringBuilder();
-            Random rnd = new Random();
-            while (0 < length--)
-            {
-                res.Append(valid[rnd.Next(valid.Length)]);
-            }
+            var res = new StringBuilder();
+            var rnd = new Random();
+            while (0 < length--) res.Append(valid[rnd.Next(valid.Length)]);
             return res.ToString();
         }
 
@@ -79,11 +69,9 @@ namespace Fenit.Toolbox.ApplicationUserManager.Helper
             {
                 var enc = Encoding.Unicode;
                 var result = hash.ComputeHash(enc.GetBytes(s));
-                foreach (var b in result)
-                {
-                    sb.Append(b.ToString("x2"));
-                }
+                foreach (var b in result) sb.Append(b.ToString("x2"));
             }
+
             return sb.ToString();
         }
     }

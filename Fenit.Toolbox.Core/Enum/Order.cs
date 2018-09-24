@@ -1,4 +1,4 @@
-﻿namespace Fenit.Core.Web.Enum
+﻿namespace Fenit.Toolbox.Core.Enum
 {
     public enum Order
     {

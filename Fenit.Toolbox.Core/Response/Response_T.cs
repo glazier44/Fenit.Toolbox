@@ -1,4 +1,4 @@
-﻿namespace Fenit.Toolbox.Core.Web
+﻿namespace Fenit.Toolbox.Core.Response
 {
     public class Response<T> : Response
     {

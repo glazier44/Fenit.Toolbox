@@ -1,96 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using Fenit.Toolbox.Core.Answers;
 
 namespace Fenit.Toolbox.Core.Extension
 {
     public static class StringExtension
     {
-        #region DateTime
-        public static string AsSmallString(this DateTime val, string format)
-        {
-            return val.ToString(format);
-        }
-
-        public static string AsSmallString(this DateTime? val, string format)
-        {
-            return val.HasValue ? val.Value.AsSmallString(format) : string.Empty;
-        }
-
-        public static string AsSmallString(this DateTime val)
-        {
-            return val.ToString("yyyy-MM-dd");
-        }
-
-        public static string AsSmallString(this DateTime? val)
-        {
-            return val.HasValue ? val.Value.AsSmallString() : string.Empty;
-        }
-
-        public static string AsLongString(this DateTime val)
-        {
-            return val.ToString("yyyy-MM-dd HH:mm:ss");
-        }
-
-        public static string AsLongString(this DateTime? val)
-        {
-            return val.HasValue ? val.Value.AsLongString() : string.Empty;
-        }
-        #endregion
-
-        #region TimeSpan
-
-        public static string AsStringHMS(this TimeSpan val)
-        {
-            return val.ToString(@"hh\:mm\:ss");
-        }
-
-        public static string AsStringHM(this TimeSpan val)
-        {
-            return val.ToString(@"hh\:mm");
-        }
-
-        public static string AsStringMS(this TimeSpan? val)
-        {
-            return val.HasValue ? val.Value.AsStringMS() : string.Empty;
-        }
-
-        public static string AsStringMS(this TimeSpan val)
-        {
-            return val.ToString(@"mm\:ss");
-        }
-
-        public static string AsStringHMS(this TimeSpan? val)
-        {
-            return val.HasValue ? val.Value.AsStringHMS() : "00:00:00";
-        }
-
-        public static string SumLabel(this TimeSpan? time)
-        {
-            if (time == null) return String.Empty;
-            return time.Value.SumLabel();
-        }
-
-        public static string SumLabel(this TimeSpan time)
-        {
-            return $"{(int)time.TotalHours} godzin {time.Minutes} minut";
-        }
-
-        public static string SmallSumLabel(this TimeSpan? time)
-        {
-            if (time == null) return String.Empty;
-            return time.Value.SmallSumLabel();
-        }
-
-        public static string SmallSumLabel(this TimeSpan time)
-        {
-            if (time.Minutes > 9) return $"{(int)time.TotalHours}:{time.Minutes}";
-            return $"{(int)time.TotalHours}:0{time.Minutes}";
-        }
-
-        #endregion
-
         public static string AsString(this decimal val)
         {
             return val.ToString("##.##");
@@ -98,12 +16,8 @@ namespace Fenit.Toolbox.Core.Extension
 
         public static string AsPln(this decimal val)
         {
-            if (val > 0)
-            {
-                return val.ToString("##.## zł");
-            }
-            return String.Empty;
-
+            if (val > 0) return val.ToString("##.## zł");
+            return string.Empty;
         }
 
         public static string AsString(this decimal? val)
@@ -154,13 +68,11 @@ namespace Fenit.Toolbox.Core.Extension
             var firts = false;
             foreach (var i in list)
             {
-                if (firts)
-                {
-                    result += ", ";
-                }
+                if (firts) result += ", ";
                 result += i.ToString();
                 firts = true;
             }
+
             return result;
         }
 
@@ -170,13 +82,11 @@ namespace Fenit.Toolbox.Core.Extension
             var firts = false;
             foreach (var i in list.OrderBy(w => w))
             {
-                if (firts)
-                {
-                    result += ", ";
-                }
+                if (firts) result += ", ";
                 result += i;
                 firts = true;
             }
+
             return result;
         }
 
@@ -188,8 +98,132 @@ namespace Fenit.Toolbox.Core.Extension
                 result += row;
                 result += Environment.NewLine;
             }
+
             return result;
         }
-    }
 
+        public static Response<string> LoadFile(this string input)
+        {
+            var res = new Response<string>();
+            try
+            {
+                using (var file = new StreamReader(input))
+                {
+                    res.AddValue(file.ReadToEnd());
+                }
+            }
+            catch (Exception e)
+            {
+                res.AddError(e.Message);
+            }
+            return res;
+        }
+
+        public static Response SaveFile(this string text, Stream fileName)
+        {
+            var res = new Response();
+            try
+            {
+                using (var writer = new StreamWriter(fileName))
+                {
+                    writer.WriteLine(text);
+                }
+
+                fileName.Dispose();
+                res.AddError("Null Stream");
+            }
+            catch (Exception e)
+            {
+                res.AddError(e.Message);
+            }
+
+            return res;
+        }
+
+        #region DateTime
+
+        public static string AsSmallString(this DateTime val, string format)
+        {
+            return val.ToString(format);
+        }
+
+        public static string AsSmallString(this DateTime? val, string format)
+        {
+            return val.HasValue ? val.Value.AsSmallString(format) : string.Empty;
+        }
+
+        public static string AsSmallString(this DateTime val)
+        {
+            return val.ToString("yyyy-MM-dd");
+        }
+
+        public static string AsSmallString(this DateTime? val)
+        {
+            return val.HasValue ? val.Value.AsSmallString() : string.Empty;
+        }
+
+        public static string AsLongString(this DateTime val)
+        {
+            return val.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+
+        public static string AsLongString(this DateTime? val)
+        {
+            return val.HasValue ? val.Value.AsLongString() : string.Empty;
+        }
+
+        #endregion
+
+        #region TimeSpan
+
+        public static string AsStringHMS(this TimeSpan val)
+        {
+            return val.ToString(@"hh\:mm\:ss");
+        }
+
+        public static string AsStringHM(this TimeSpan val)
+        {
+            return val.ToString(@"hh\:mm");
+        }
+
+        public static string AsStringMS(this TimeSpan? val)
+        {
+            return val.HasValue ? val.Value.AsStringMS() : string.Empty;
+        }
+
+        public static string AsStringMS(this TimeSpan val)
+        {
+            return val.ToString(@"mm\:ss");
+        }
+
+        public static string AsStringHMS(this TimeSpan? val)
+        {
+            return val.HasValue ? val.Value.AsStringHMS() : "00:00:00";
+        }
+
+        public static string SumLabel(this TimeSpan? time)
+        {
+            if (time == null) return string.Empty;
+            return time.Value.SumLabel();
+        }
+
+        public static string SumLabel(this TimeSpan time)
+        {
+            return $"{(int) time.TotalHours} godzin {time.Minutes} minut";
+        }
+
+        public static string SmallSumLabel(this TimeSpan? time)
+        {
+            if (time == null) return string.Empty;
+            return time.Value.SmallSumLabel();
+        }
+
+        public static string SmallSumLabel(this TimeSpan time)
+        {
+            if (time.Minutes > 9) return $"{(int) time.TotalHours}:{time.Minutes}";
+            return $"{(int) time.TotalHours}:0{time.Minutes}";
+        }
+
+        #endregion
+    }
 }

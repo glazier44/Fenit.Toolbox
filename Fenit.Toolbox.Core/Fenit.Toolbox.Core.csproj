@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Fenit.Toolbox.Core</RootNamespace>
     <AssemblyName>Fenit.Toolbox.Core</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Converted\ConvertBool.cs" />
@@ -51,11 +53,12 @@
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Extension\EnumExtension.cs" />
     <Compile Include="Extension\SystemExtension.cs" />
+    <Compile Include="Extension\XmlExtension.cs" />
     <Compile Include="Model\ItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VersionInfoHelpercs.cs" />
-    <Compile Include="Response\Response.cs" />
-    <Compile Include="Response\Response_T.cs" />
+    <Compile Include="Answers\Response.cs" />
+    <Compile Include="Answers\Response_T.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

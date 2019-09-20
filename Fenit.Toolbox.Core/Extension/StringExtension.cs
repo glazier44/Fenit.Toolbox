@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using Fenit.Toolbox.Core.Answers;
 
@@ -9,6 +10,8 @@ namespace Fenit.Toolbox.Core.Extension
 {
     public static class StringExtension
     {
+        private const char Separator = ';';
+
         public static string AsString(this decimal val)
         {
             return val.ToString("##.##");
@@ -116,6 +119,7 @@ namespace Fenit.Toolbox.Core.Extension
             {
                 res.AddError(e.Message);
             }
+
             return res;
         }
 
@@ -225,5 +229,30 @@ namespace Fenit.Toolbox.Core.Extension
         }
 
         #endregion
+
+        public static int FirstString(this string text, string[] val)
+        {
+            var res = Int32.MaxValue;
+            foreach (var el in val)
+            {
+                var s = text.IndexOf(el);
+                if (s < res && s > 0)
+                {
+                    res = s;
+                }
+            }
+
+            return text.Length > res ? res : 0;
+        }
+
+        public static string JoinText(this List<string> list)
+        {
+            return string.Join(Separator.ToString(), list);
+        }
+
+        public static List<string> SplitText(this string @string)
+        {
+            return @string.Split(Separator).ToList();
+        }
     }
 }

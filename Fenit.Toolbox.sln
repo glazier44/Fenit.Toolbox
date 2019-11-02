@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2042
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29306.81
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Test", "Fenit.Toolbox.Test\Fenit.Toolbox.Test.csproj", "{6441A2F9-2F4C-4371-88E7-928398558898}"
 EndProject
@@ -16,6 +16,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Web", "Fenit.Toolbox.Web\Fenit.Toolbox.Web.csproj", "{6BD611DE-ED3C-4305-9E7F-46C3886B3C79}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.EntityFramework", "Fenit.Toolbox.EntityFramework\Fenit.Toolbox.EntityFramework.csproj", "{41C1F4C2-9D16-4FB4-8FAF-9F46B1D1EBB5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fenit.Toolbox.Yaml.Test", "Fenit.Toolbox.Yaml.Test\Fenit.Toolbox.Yaml.Test.csproj", "{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Yaml", "Fenit.Toolbox.Yaml\Fenit.Toolbox.Yaml.csproj", "{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,12 +51,21 @@ Global
 		{41C1F4C2-9D16-4FB4-8FAF-9F46B1D1EBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41C1F4C2-9D16-4FB4-8FAF-9F46B1D1EBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41C1F4C2-9D16-4FB4-8FAF-9F46B1D1EBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6441A2F9-2F4C-4371-88E7-928398558898} = {36399ACD-2B83-44C5-8A0A-0A0AD155DB5E}
+		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7} = {36399ACD-2B83-44C5-8A0A-0A0AD155DB5E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {44949726-43E9-4EDF-8160-6047501FCCB3}

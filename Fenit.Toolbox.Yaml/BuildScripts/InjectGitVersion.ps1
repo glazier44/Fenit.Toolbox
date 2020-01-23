@@ -6,8 +6,8 @@ $assemblyFile = $args[0] + "\Properties\AssemblyInfo.cs";
 $templateFile =  $args[0] + "\Properties\AssemblyInfo_template.cs";
 
     $newAssemblyContent = Get-Content $templateFile |
-    %{$_ -replace '\$FILEVERSION\$', ('1.0.3.' + $gitText) } |
-    %{$_ -replace '\$INFOVERSION\$', ('1.0.3') };
+    %{$_ -replace '\$FILEVERSION\$', ('1.0.25.' + $gitText) } |
+    %{$_ -replace '\$INFOVERSION\$', ('1.0.25') };
 
 
 If (-not (Test-Path $assemblyFile) -or ((Compare-Object (Get-Content $assemblyFile) $newAssemblyContent))) {

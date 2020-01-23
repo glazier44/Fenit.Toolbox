@@ -9,8 +9,8 @@ $templateFile =  $args[0] + "\Properties\AssemblyInfo_template.cs";
 
 
     $newAssemblyContent = Get-Content $templateFile |
-    %{$_ -replace '\$FILEVERSION\$', ('1.0.4.' + $gitText) } |
-    %{$_ -replace '\$INFOVERSION\$', ('1.0.4') };
+    %{$_ -replace '\$FILEVERSION\$', ('1.0.5.' + $gitText) } |
+    %{$_ -replace '\$INFOVERSION\$', ('1.0.5') };
 
 
 

@@ -5,13 +5,9 @@ $gitText= "{0:0000}" -f [convert]::ToInt32($gitVersion, 10);
 $assemblyFile = $args[0] + "\Properties\AssemblyInfo.cs";
 $templateFile =  $args[0] + "\Properties\AssemblyInfo_template.cs";
 
-
-
-
     $newAssemblyContent = Get-Content $templateFile |
-    %{$_ -replace '\$FILEVERSION\$', ('1.0.0.' + $gitText) } |
-    %{$_ -replace '\$INFOVERSION\$', ('1.0.0' + $gitText + "-" + $name) };
-
+    %{$_ -replace '\$FILEVERSION\$', ('1.0.3.' + $gitText) } |
+    %{$_ -replace '\$INFOVERSION\$', ('1.0.3') };
 
 
 If (-not (Test-Path $assemblyFile) -or ((Compare-Object (Get-Content $assemblyFile) $newAssemblyContent))) {

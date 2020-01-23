@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1000
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Test", "Fenit.Toolbox.Test\Fenit.Toolbox.Test.csproj", "{6441A2F9-2F4C-4371-88E7-928398558898}"
 EndProject
@@ -20,6 +20,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fenit.Toolbox.Yaml.Test", "Fenit.Toolbox.Yaml.Test\Fenit.Toolbox.Yaml.Test.csproj", "{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Yaml", "Fenit.Toolbox.Yaml\Fenit.Toolbox.Yaml.csproj", "{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Android", "Fenit.Toolbox.Android\Fenit.Toolbox.Android.csproj", "{E3E102B6-8CE7-4280-90B2-5FC1A902C258}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,6 +61,10 @@ Global
 		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

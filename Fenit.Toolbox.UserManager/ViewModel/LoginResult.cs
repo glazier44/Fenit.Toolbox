@@ -20,14 +20,15 @@ namespace Fenit.Toolbox.UserManager.ViewModel
                     case SignInStatus.Block:
                     {
                         Message = "zablokowany";
-                        IsError = true;
+                        ResponseStatus=ResponseStatus.Warning;
                         break;
                     }
                     case SignInStatus.Failure:
                     {
                         Message = "Błąd";
-                        IsError = true;
-                        break;
+                        ResponseStatus = ResponseStatus.Error;
+
+                            break;
                     }
                 }
             }

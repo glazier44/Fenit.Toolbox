@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Answers\ResponseStatus.cs" />
     <Compile Include="Converted\ConvertBool.cs" />
+    <Compile Include="Extension\FileExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
     <Compile Include="Extension\EnumExtension.cs" />
     <Compile Include="Extension\SystemExtension.cs" />
@@ -63,4 +64,7 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>powershell -ExecutionPolicy ByPass -File  $(ProjectDir)\BuildScripts\InjectGitVersion.ps1 $(ProjectDir)</PreBuildEvent>
+  </PropertyGroup>
 </Project>

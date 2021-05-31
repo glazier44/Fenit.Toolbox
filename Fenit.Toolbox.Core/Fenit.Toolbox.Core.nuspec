@@ -9,10 +9,13 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <license type="expression">MIT</license>
     <projectUrl>https://github.com/glazier44/Fenit.Toolbox</projectUrl>
-    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <iconUrl>http://fenit.pl/logo.ico</iconUrl>
     <description>$description$</description>
     <releaseNotes>Start</releaseNotes>
     <copyright>Copyright 2020</copyright>
-    <tags>c#</tags>
+    <tags>c#, Core</tags>
+       <dependencies>
+      <group targetFramework=".NETFramework4.7.2" />
+    </dependencies>
   </metadata>
 </package>

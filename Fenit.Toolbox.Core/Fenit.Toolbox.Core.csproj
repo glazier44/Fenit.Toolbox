@@ -57,5 +57,10 @@
   <ItemGroup>
     <Folder Include="Enum\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="images\logo.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

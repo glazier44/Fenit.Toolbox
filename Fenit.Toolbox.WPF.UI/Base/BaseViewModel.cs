@@ -1,7 +1,8 @@
 using System;
 using System.Windows;
-using Fenit.Toolbox.WPF.UI.Service;
+using Fenit.Toolbox.Logger;
 using Prism.Mvvm;
+
 
 namespace Fenit.Toolbox.WPF.UI.Base
 {

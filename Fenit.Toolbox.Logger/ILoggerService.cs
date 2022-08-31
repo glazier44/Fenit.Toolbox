@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Fenit.Toolbox.WPF.UI.Service
+namespace Fenit.Toolbox.Logger
 {
     public interface ILoggerService
     {

@@ -1,6 +1,5 @@
 using System;
 using System.Windows;
-using Fenit.HelpTool.Core.Service;
 using Fenit.HelpTool.Core.Service.Abstract;
 using Prism.Mvvm;
 

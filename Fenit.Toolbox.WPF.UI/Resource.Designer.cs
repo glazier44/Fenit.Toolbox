@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Fenit.HelpTool.UI.Core {
+namespace Fenit.Toolbox.WPF.UI {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Fenit.HelpTool.UI.Core {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fenit.HelpTool.UI.Core.Resource", typeof(Resource).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Fenit.Toolbox.WPF.UI.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;

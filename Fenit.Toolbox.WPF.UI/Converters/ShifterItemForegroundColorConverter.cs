@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Windows.Data;
 using System.Windows.Media;
 
-namespace Fenit.HelpTool.UI.Core.Converters
+namespace Fenit.Toolbox.WPF.UI.Converters
 {
     public class ShifterItemForegroundColorConverter : IValueConverter
     {

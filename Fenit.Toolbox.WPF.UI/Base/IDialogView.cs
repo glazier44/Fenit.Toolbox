@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Fenit.HelpTool.UI.Core.Base
+﻿namespace Fenit.Toolbox.WPF.UI.Base
 {
     public interface IDialogView
     {

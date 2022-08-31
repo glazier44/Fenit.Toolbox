@@ -4,7 +4,7 @@ using System.Linq.Expressions;
 using System.Windows;
 using System.Windows.Controls;
 
-namespace Fenit.HelpTool.UI.Core.Base
+namespace Fenit.Toolbox.WPF.UI.Base
 {
     public abstract class BaseView : UserControl, IView, INotifyPropertyChanged
     {

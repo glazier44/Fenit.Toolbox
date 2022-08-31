@@ -2,7 +2,7 @@
 using Fenit.Toolbox.Core.Answers;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
-namespace Fenit.HelpTool.UI.Core.Dialog
+namespace Fenit.Toolbox.WPF.UI.Dialog
 {
     public class OpenDialog
     {

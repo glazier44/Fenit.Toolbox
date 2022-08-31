@@ -4,7 +4,7 @@ using Prism.Modularity;
 using Unity;
 using Unity.Injection;
 
-namespace Fenit.HelpTool.UI.Core.Base
+namespace Fenit.Toolbox.WPF.UI.Base
 {
     public abstract class BaseModule : IModule
     {

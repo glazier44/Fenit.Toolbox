@@ -1,6 +1,6 @@
 ﻿using Prism.Events;
 
-namespace Fenit.HelpTool.UI.Core.Events
+namespace Fenit.Toolbox.WPF.UI.Events
 {
     public class LogEvent : PubSubEvent<string>
     {

@@ -1,9 +1,9 @@
 using System;
 using System.Windows;
-using Fenit.HelpTool.Core.Service.Abstract;
+using Fenit.Toolbox.WPF.UI.Service;
 using Prism.Mvvm;
 
-namespace Fenit.HelpTool.UI.Core.Base
+namespace Fenit.Toolbox.WPF.UI.Base
 {
     public abstract class BaseViewModel : BindableBase //, INotifyPropertyChanged
     {

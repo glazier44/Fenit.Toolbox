@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using System.Windows.Controls;
 
-namespace Fenit.HelpTool.UI.Core.Validators
+namespace Fenit.Toolbox.WPF.UI.Validators
 {
     public class NotEmptyValidationRule : ValidationRule
     {

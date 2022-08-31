@@ -2,7 +2,7 @@
 using System.Globalization;
 using System.Windows.Data;
 
-namespace Fenit.HelpTool.UI.Core.Converters
+namespace Fenit.Toolbox.WPF.UI.Converters
 {
     public class DateTimeConverter : IValueConverter
     {

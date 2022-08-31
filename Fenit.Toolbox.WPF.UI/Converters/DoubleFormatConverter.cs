@@ -1,9 +1,8 @@
 using System;
 using System.Globalization;
-using System.Reflection;
 using System.Windows.Data;
 
-namespace Fenit.HelpTool.UI.Core.Converters
+namespace Fenit.Toolbox.WPF.UI.Converters
 {
     public class DoubleFormatConverter : IValueConverter
     {

@@ -1,6 +1,6 @@
 ﻿using Prism.Events;
 
-namespace Fenit.HelpTool.UI.Core.Events.KeyBinding
+namespace Fenit.Toolbox.WPF.UI.Events.KeyBinding
 {
     public class SaveNewKeyBindingEvent : PubSubEvent
     {

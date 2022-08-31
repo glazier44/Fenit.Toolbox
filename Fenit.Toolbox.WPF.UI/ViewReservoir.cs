@@ -1,6 +1,6 @@
 ﻿namespace Fenit.Toolbox.WPF.UI
 {
-    public static class ViewReservoir
+    public abstract class BaseViewReservoir
     {
         public static class Regions
         {

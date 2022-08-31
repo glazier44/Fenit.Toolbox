@@ -18,10 +18,7 @@
         public static class MenuModule
         {
             public static string Name = "MenuModule";
-
             public static string Menu = "MenuModule.Menu";
         }
-
-
     }
 }

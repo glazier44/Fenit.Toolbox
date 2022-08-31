@@ -19,8 +19,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.EntityFramewo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fenit.Toolbox.Yaml.Test", "Fenit.Toolbox.Yaml.Test\Fenit.Toolbox.Yaml.Test.csproj", "{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Yaml", "Fenit.Toolbox.Yaml\Fenit.Toolbox.Yaml.csproj", "{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.Android", "Fenit.Toolbox.Android\Fenit.Toolbox.Android.csproj", "{E3E102B6-8CE7-4280-90B2-5FC1A902C258}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fenit.Toolbox.WPF.UI", "Fenit.Toolbox.WPF.UI\Fenit.Toolbox.WPF.UI.csproj", "{122AADEF-69A2-4B94-85D6-A765F0DBA443}"
@@ -59,10 +57,6 @@ Global
 		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77FECEEC-3A7C-4CF1-B58B-1C6DB6E47DF7}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F95ECC31-237D-4E85-BD6A-A55DF0A43E13}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E3E102B6-8CE7-4280-90B2-5FC1A902C258}.Release|Any CPU.ActiveCfg = Release|Any CPU
